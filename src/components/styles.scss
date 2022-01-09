@@ -1,0 +1,41 @@
+nav > ul {
+    display: flex;
+    gap: 5px;
+    border: 1px solid black;
+}
+
+li > ul {
+    display: none;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 5px;
+}
+
+li {
+    position: relative;
+    padding: 5px;
+    background-color: wheat;
+    &:hover {
+        background-color: lightblue;
+        cursor: pointer;
+        & > ul {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            left: 100%;
+            top: 0;
+        }
+    }
+}
+
+nav > ul > li {
+    &:hover {
+        & > ul {
+            left: 0;
+            top: 100%;
+        }
+    }
+}
